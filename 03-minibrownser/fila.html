@@ -1,0 +1,90 @@
+<script>
+    console.log('[Fila/Queue]');
+    // Pessoas - Qualquer tipo de dado
+    // Uma atrás da outra - Ordem importa
+    // Quem entra primeiro, sai primeiro
+
+    var fila = [
+        'scripts.js',
+        'style.css',
+        'imagem.png',
+    ];
+    // Adiciona alguem na fila
+    fila.push (`doguinho.png`)
+    // Remove o primieiro da fila
+    fila.shift ();
+    // =========================
+    // Receita para criar filas
+    //==========================
+    // - enqueue: enfileirar
+    // - dequeue  desinfileirar
+
+    class Queue { // Class: Receita para criar objetos.
+        constructor() {
+            this.data = [];
+        }
+        print () {
+            console.log(this.data);        
+        }
+        enqueue (item) {
+            this.data.push (item)
+
+        }
+        dequeue () {
+            this.data.shift ();
+
+        }
+
+    }
+
+    //Design do Codigo First
+    var requests = new Queue();
+    // Open Closed
+    // Open: Aberto pra extensão
+    // Closed: Fechado pra modificação 
+    requests.enqueue(`scripts.js`);
+    requests.print();
+    requests.dequeue(`scripts.js`);
+    requests.enqueue(`style.css`);
+    requests.enqueue(`imagem.png`);
+    requests.enqueue(`doguinho.png`);
+    requests.print();
+
+
+</script>
+
+
+
+
+
+
+
+
+
+<!--
+[Fila/Queue]
+fila
+(3) ['scripts.js', 'style.css', 'imagem.png']0: "scripts.js"1: "style.css"2: "imagem.png"length: 3[[Prototype]]: Array(0)
+fila[0]
+'scripts.js'
+fila[1]
+'style.css'
+fila[2]
+'imagem.png'
+fila.push('doguinho.jpg')
+4
+fila.shift();
+'scripts.js'
+fila
+(3) ['style.css', 'imagem.png', 'doguinho.jpg']-->
+
+<!--
+[Fila/Queue]
+new Queue ();
+Queue {}[[Prototype]]: Object  // Ele mostra a estrutura
+var filaDoBanco = new Queue (); // Pode Salvar
+undefined
+filaDoBanco.enqueue(); // Estendendo a imagem para ter suporte a criar esse tipo de dado.
+undefined
+filaDoBanco.dequeue();
+undefined-->

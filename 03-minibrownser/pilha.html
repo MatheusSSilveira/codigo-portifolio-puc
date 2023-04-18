@@ -1,0 +1,40 @@
+<script>
+    // LIFO - Stack
+    console.log('Pilha/Stack');
+    class BrowserHistoryStack {
+        constructor () {
+            this.cursor =0;
+            this.data = [];
+        }
+        push (item) { //adicionar no final
+            this.cursor = this.cursor +1;
+            this.data.push(item);
+        }
+        back() { // pop()
+            this.cursor = this.cursor -1;
+        //    this.data.pop();
+
+        }
+        // limpar historico
+        clear() {
+            this.data = [];
+        }
+
+        print() {
+            console.log('Cursor', this.cursor);
+            console.log('Itens atuais',this.data);
+        }
+
+    }
+    // Simular o Histórico
+    const history = new BrowserHistoryStack();
+    history.push('https://google.com');
+    history.push('https://youtube.com');
+    history.push('https://facebook.com');
+    history.print();
+    // voltar para a aba anterior - dar um pop = back
+    history.back();
+    history.print();
+
+
+</script>
